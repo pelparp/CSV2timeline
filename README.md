@@ -24,7 +24,7 @@ CSV2Timeline.exe -i <input_directory> -o <output_directory> -s <source_system>
 
 ## Configuration
 
-CSV2Timeline uses INI files for configuration. Each section in the INI file represents a different type of event data and contains the following properties:
+CSV2Timeline uses INI files for configuration. It expects a config.ini file in the program directory. Each section in the INI file represents a different type of event data and contains the following properties:
 
 - `datetime`: Field name containing the timestamp of the event.
 - `headers`: Comma-separated list of headers in the CSV file.
