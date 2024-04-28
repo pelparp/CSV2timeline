@@ -143,17 +143,24 @@ class Program
 
             var headers = csv.HeaderRecord;
 
-            int maxMatchingHeaders = 0;
+            //int maxMatchingHeaders = 0;
             Configuration matchingConfig = null;
 
             foreach (var config in configs)
             {
-                int matchingHeadersCount = CountMatchingHeaders(headers, config.Headers);
-                if (matchingHeadersCount > maxMatchingHeaders)
+                if(config.Headers.SequenceEqual(headers))
                 {
-                    maxMatchingHeaders = matchingHeadersCount;
                     matchingConfig = config;
+                    Console.WriteLine(matchingConfig.Headers.ToString());
+                    
                 }
+                // count is not a great way to header match. We'll just compare the string arrays as seen above.
+                //int matchingHeadersCount = CountMatchingHeaders(headers, config.Headers);
+                //if (matchingHeadersCount > maxMatchingHeaders)
+                //{
+                //    maxMatchingHeaders = matchingHeadersCount;
+                //    matchingConfig = config;
+                //}
             }
 
             return matchingConfig;
