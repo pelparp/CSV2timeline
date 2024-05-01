@@ -150,9 +150,7 @@ class Program
             {
                 if(config.Headers.SequenceEqual(headers))
                 {
-                    matchingConfig = config;
-                    Console.WriteLine(matchingConfig.Headers.ToString());
-                    
+                    matchingConfig = config;                    
                 }
                 // count is not a great way to header match. We'll just compare the string arrays as seen above.
                 //int matchingHeadersCount = CountMatchingHeaders(headers, config.Headers);
